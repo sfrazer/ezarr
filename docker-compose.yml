@@ -174,8 +174,9 @@ services:
     ports:
       - 8080:8080
     volumes:
+      - ${ROOT_DIR}/data/downloads:/downloads
+      - ${ROOT_DIR}/data/incomplete-downloads:/incomplete-downloads
       - ${ROOT_DIR}/docker/sabnzbd-config:/config
-      - ${ROOT_DIR}/data:/data
     environment:
       - PUID=13009
       - PGID=13000
