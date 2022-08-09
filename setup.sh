@@ -40,3 +40,7 @@ sudo chown -R jackett:mediacenter docker/jackett-config
 sudo chown -R sabnzbd:mediacenter docker/sabnzbd-config
 
 echo "UID=$(id -u)" >> .env
+
+# remove media directories and symlink it to NFS mount
+sudo rm -rf data/media
+sudo ln -s /mnt/media1/Video data/media
