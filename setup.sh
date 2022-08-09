@@ -44,3 +44,7 @@ echo "UID=$(id -u)" >> .env
 # remove media directories and symlink it to NFS mount
 sudo rm -rf data/media
 sudo ln -s /mnt/media1/Video data/media
+sudo cp ezarr.service /etc/systemd/system/ezarr.service
+sudo systemctl daemon-reload
+sudo systemctl enable ezarr
+sudo systemctl status ezarr
